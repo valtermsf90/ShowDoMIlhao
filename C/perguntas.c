@@ -7,6 +7,10 @@
 int posicao = 0;
 char frase[100][100];
 int resposta[100];
+char fraseGeogafia[50][100];
+
+
+
 void cadastroFrase()
 {
 
