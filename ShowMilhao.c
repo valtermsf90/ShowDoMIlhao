@@ -28,7 +28,9 @@ bool escolha = true;
 bool repetido = true;
 bool menu = true;
 bool submenu = true;
-submenu2 = true;
+bool submenu2 = true;
+
+// Função principal
 int main()
 {
     // declaração de variáveis
@@ -73,69 +75,69 @@ int main()
             tecla = 3;
         }
         if (tecla != 0){
-            while (submenu){
-                if (tecla == 1){
-                    printf("[A]Geografia\t[B]Matemática\n");
-                    while (submenu2){
-                        if (gpio_get(BUTTON_A) == 0){
-                            azul(300);
-                            apagado(0);
-                            tema = tecla;
-                            submenu2 = false;
-                        }
-                        else if (gpio_get(BUTTON_B) == 0){
-                            amarelo(300);
-                            apagado(0);
-                            tema = tecla + 3;
-                            submenu2 = false;             
-                        }                        
-                    }
-                    submenu2 = true;
-                }
-                if (tecla == 2){
-                    printf("[A]Ciências\t[B]Entreterimento\n");
-                    while (submenu2){
-                        if (gpio_get(BUTTON_A) == 0){
-                            azul(300);
-                            apagado(0);
-                            tema = tecla + 3;
-                            submenu2 = false;
-                        }else if (gpio_get(BUTTON_B) == 0){
-                            amarelo(300);
-                            apagado(0);
-                            tema = tecla + 3;
-                            submenu2 = false;
-                        }
-                    }
-                    submenu2 = true;
-                }
-                if (tecla == 3){
-                    printf("[A]História\t[B]Todas\n");
-                    while (submenu2){
-                        if (gpio_get(BUTTON_A) == 0){
-                            azul(300);
-                            apagado(0);
-                            tema = tecla + 3;
-                            submenu2 = false;             
-                        }
-                        else if (gpio_get(BUTTON_B) == 0){
-                            amarelo(300);
-                            apagado(0);
-                            tema = 6;
-                            submenu2 = false;                
-                        }
-                    }
-                    submenu2 = true;
-                }               
-                submenu = false;                
-            }
-            submenu = true;
-        }
-        if (tema != 0){        
-        menu = false;
+            menu = false;
         }
     }
     menu = true;
+    while (submenu){
+        if (tecla == 1){
+            printf("[A]Geografia\t[B]Matemática\n");
+            while (submenu2){
+                if (gpio_get(BUTTON_A) == 0){
+                    azul(300);
+                    apagado(0);
+                    tema = tecla;
+                    submenu2 = false;
+                }
+                else if (gpio_get(BUTTON_B) == 0){
+                    amarelo(300);
+                    apagado(0);
+                    tema = tecla + 3;
+                    submenu2 = false;             
+                }                        
+            }
+            submenu2 = true;
+        }
+        if (tecla == 2){
+            printf("[A]Ciências\t[B]Entreterimento\n");
+            while (submenu2){
+                if (gpio_get(BUTTON_A) == 0){
+                    azul(300);
+                    apagado(0);
+                    tema = tecla + 3;
+                    submenu2 = false;
+                }else if (gpio_get(BUTTON_B) == 0){
+                    amarelo(300);
+                    apagado(0);
+                    tema = tecla + 3;
+                    submenu2 = false;
+                }
+            }
+            submenu2 = true;
+        }
+        if (tecla == 3){
+            printf("[A]História\t[B]Todas\n");
+            while (submenu2){
+                if (gpio_get(BUTTON_A) == 0){
+                    azul(300);
+                    apagado(0);
+                    tema = tecla + 3;
+                    submenu2 = false;             
+                }
+                else if (gpio_get(BUTTON_B) == 0){
+                    amarelo(300);
+                    apagado(0);
+                    tema = 6;
+                    submenu2 = false;                
+                }
+            }
+            submenu2 = true;
+        }               
+        submenu = false;                
+    }
+    submenu = true;
+    
+
 
 while (true)
 {
