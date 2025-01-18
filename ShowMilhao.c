@@ -18,6 +18,10 @@
 #define TIME 300
 
 // Variáveis globais
+// repetição
+
+int tentativa;
+int usado[100];
 int posicaoi;
 char temaChar[20];
 int tema = 0;
@@ -37,7 +41,7 @@ bool submenu2 = true;
 int main()
 {
     // declaração de variáveis
-    posicao = 0;
+
     int numQuestao = 0;
 
     // chamanado as funções
@@ -58,57 +62,72 @@ int main()
     printf("[B]Ciência\tEntreterimento\n");
     printf("[J]Historia\tAleatória\n");
     printf("\n");
-    while (menu){ 
-        tecla = 0;       
-        if (gpio_get(BUTTON_A) == 0){
+    while (menu)
+    {
+        tecla = 0;
+        if (gpio_get(BUTTON_A) == 0)
+        {
             azul(300);
             apagado(0);
             tecla = 1;
         }
-        else if (gpio_get(BUTTON_B) == 0){
+        else if (gpio_get(BUTTON_B) == 0)
+        {
             amarelo(300);
             apagado(0);
             tecla = 2;
         }
-        else if (gpio_get(BUTTON_J) == 0){
+        else if (gpio_get(BUTTON_J) == 0)
+        {
             rosa(300);
             apagado(0);
             tecla = 3;
             verde(300);
         }
-        if (tecla != 0){
+        if (tecla != 0)
+        {
             menu = false;
         }
     }
     menu = true;
-    while (submenu){
-        if (tecla == 1){
+    while (submenu)
+    {
+        if (tecla == 1)
+        {
             printf("[A]Geografia\t[B]Matemática\n");
-            while (submenu2){
-                if (gpio_get(BUTTON_A) == 0){
+            while (submenu2)
+            {
+                if (gpio_get(BUTTON_A) == 0)
+                {
                     azul(300);
                     apagado(0);
                     tema = tecla;
                     submenu2 = false;
                 }
-                else if (gpio_get(BUTTON_B) == 0){
+                else if (gpio_get(BUTTON_B) == 0)
+                {
                     amarelo(300);
                     apagado(0);
                     tema = tecla + 3;
-                    submenu2 = false;             
-                }                        
+                    submenu2 = false;
+                }
             }
             submenu2 = true;
         }
-        if (tecla == 2){
+        if (tecla == 2)
+        {
             printf("[A]Ciências\t[B]Entreterimento\n");
-            while (submenu2){
-                if (gpio_get(BUTTON_A) == 0){
+            while (submenu2)
+            {
+                if (gpio_get(BUTTON_A) == 0)
+                {
                     azul(300);
                     apagado(0);
                     tema = tecla;
                     submenu2 = false;
-                }else if (gpio_get(BUTTON_B) == 0){
+                }
+                else if (gpio_get(BUTTON_B) == 0)
+                {
                     amarelo(300);
                     apagado(0);
                     tema = tecla + 3;
@@ -117,25 +136,29 @@ int main()
             }
             submenu2 = true;
         }
-        if (tecla == 3){
+        if (tecla == 3)
+        {
             printf("[A]História\t[B]Aleatória\n");
-            while (submenu2){
-                if (gpio_get(BUTTON_A) == 0){
+            while (submenu2)
+            {
+                if (gpio_get(BUTTON_A) == 0)
+                {
                     azul(300);
                     apagado(0);
                     tema = tecla + 3;
-                    submenu2 = false;             
+                    submenu2 = false;
                 }
-                else if (gpio_get(BUTTON_B) == 0){
+                else if (gpio_get(BUTTON_B) == 0)
+                {
                     amarelo(300);
                     apagado(0);
                     tema = 6;
-                    submenu2 = false;                
+                    submenu2 = false;
                 }
             }
             submenu2 = true;
-        }               
-        submenu = false;                
+        }
+        submenu = false;
     }
     submenu = true;
     switch (tema)
@@ -158,109 +181,113 @@ int main()
         break;
     case 5:
         printf("Tema escolhido foi Entreterimento!! Boa Sorte!\n");
-        strcpy(temaChar, "Entreterimento");    
+        strcpy(temaChar, "Entreterimento");
         break;
     case 6:
         printf("Tema escolhido foi Todas!! Boa Sorte!\n");
         strcpy(temaChar, "Todas");
         break;
-    
+
     default:
         break;
     }
-    printf("\n\n"); 
+    printf("\n\n");
     sleep_ms(3000);
-while (true)
+    while (true)
 
-{
-    numQuestao++;
+    {
+        numQuestao++;
 
-    if(tema == 6){
-        posicaoi = rand() % posicao + 1;    
-        while (posicaoi > posicao )
+        if (tema == 6)
         {
-        posicaoi = rand() % posicao + 1;
-        printf("%d\t%d\n", posicaoi, categoria[posicaoi]);
-        }   
+            posicaoi = rand() % posicao;
+            while (usado[posicaoi] == 1)
+            {
+                posicaoi = rand() % posicao;
+            }
+            usado[posicaoi] = 1;
+        }
+        else
+        {
+            // randomiza a posição da pergunta
+            posicaoi = rand() % posicao;
+            while (usado[posicaoi] == 1 || categoria[posicaoi] != tema)
+            {
+                posicaoi = rand() % posicao;
+                tentativa++;
+            }
+            usado[posicaoi] = 1;
+            /*  if(tentativa == posicao){
+              printf("Não há mais posições disponíveis para este tema.\n");
+              }*/
+        }
 
-    }else{
-
-    // randomiza a posição da pergunta
-    posicao = rand() % 100;    
-    while (posicao > 100 || categoria[posicao] != tema)
-    {
-        posicao = rand() % 101;
-        printf("%d\t%d\n", posicao, categoria[posicao]);
-    }
-    }
-    
-
-    // randomiza a posição da frase positiva
-    posFrase = rand() % 12;
-    while (posFrase >= 12)
-    {
+        // randomiza a posição da frase positiva
         posFrase = rand() % 12;
-    }
-
-    // placar e pergunta
-    printf("PLACAR: %d acertos e %d erros\n\n", acertos, erros);
-    printf("%d\tQUESTAO %d\t%s\n", posicaoi, numQuestao, temaChar);
-    printf("%s\n", frase[posicaoi]);
-    printf("[A]Verdadeiro\t[B]Falso\n");
-
-    // verifica a resposta
-    while (escolha)
-    {
-        tecla = 9;
-        if (gpio_get(BUTTON_A) == 0) // verifica se o botão A foi pressionado
+        while (posFrase >= 12)
         {
-            tecla = 1;
-            opcao = 'A';
+            posFrase = rand() % 12;
         }
-        else if (gpio_get(BUTTON_B) == 0) // verifica se o botão B foi pressionado
-        {
 
+        // placar e pergunta
+        printf("PLACAR: %d acertos e %d erros\n\n", acertos, erros);
+        printf("%d\tQUESTAO %d\t%s\n", posicaoi, numQuestao, temaChar);
+        printf("%s\n", frase[posicaoi]);
+        printf("[A]Verdadeiro\t[B]Falso\n");
+
+        // verifica a resposta
+        while (escolha)
+        {
             tecla = 0;
-            opcao = 'B';
-        }
-        if (tecla != 0)
-        {
-            printf("Voce escolheu a opcao %c\n", opcao);
-            if (tecla == resposta[posicaoi]) // verifica se a resposta está correta
+            if (gpio_get(BUTTON_A) == 0) // verifica se o botão A foi pressionado
             {
-                // mensagem de acerto
-                buzzer_A(100);
-                printf("%s\n\n", mensagemPos[posFrase]);
-                for (int i = 0; i < 6; i++)
-                {
-                    verde(100);
-                    apagado(50);
-                }
-                buzzer_A_OFF();
-                escolha = false;
-                acertos++;
-                sleep_ms(1000);
+                tecla = 1;
+                opcao = 'A';
             }
-            else
+            else if (gpio_get(BUTTON_B) == 0) // verifica se o botão B foi pressionado
             {
-                // mensagem de erro
-                buzzer_B(100);
-                printf("%s\n\n", mensagemNeg[posFrase]);
-                for (int i = 0; i < 3; i++)
+
+                tecla = 2;
+                opcao = 'B';
+            }
+            if (tecla != 0)
+            {
+                printf("Voce escolheu a opcao %c\n", opcao);
+                if (tecla == resposta[posicaoi]) // verifica se a resposta está correta
                 {
-                    vermelho(100);
-                    apagado(50);
+                    // mensagem de acerto
+                    buzzer_A(100);
+                    printf("%s\n\n", mensagemPos[posFrase]);
+                    for (int i = 0; i < 6; i++)
+                    {
+                        verde(100);
+                        apagado(50);
+                    }
+                    buzzer_A_OFF();
+                    escolha = false;
+                    acertos++;
+                    sleep_ms(1000);
                 }
-                buzzer_B_OFF();
-                erros++;
-                escolha = false;
-                sleep_ms(1000);
+                else
+                {
+                    // mensagem de erro
+                    buzzer_B(100);
+                    printf("%s\n\n", mensagemNeg[posFrase]);
+                    for (int i = 0; i < 3; i++)
+                    {
+                        vermelho(100);
+                        apagado(50);
+                    }
+                    buzzer_B_OFF();
+                    erros++;
+                    escolha = false;
+                    sleep_ms(1000);
+                }
             }
         }
+        // reinicia o jogo
+
+        escolha = true;
     }
-    // reinicia o jogo
-    
-    escolha = true;
-}
-return 0;
+    return 0;
 }

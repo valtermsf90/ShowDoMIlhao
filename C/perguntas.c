@@ -47,7 +47,7 @@ posicao++;
 
 // Pergunta 5
 strcpy(frase[posicao], "O filme 'Avatar' foi lançado após 2010.");
-resposta[posicao] = 0; // Falso (Foi lançado em 2009)
+resposta[posicao] = 2; // Falso (Foi lançado em 2009)
 categoria[posicao] = 5; // Categoria 5: Entretenimento
 posicao++;
 
@@ -65,13 +65,13 @@ posicao++;
 
 // Pergunta 8
 strcpy(frase[posicao], "A série 'Game of Thrones' é baseada nos livros de J.R.R. Tolkien.");
-resposta[posicao] = 0; // Falso (É baseada nos livros de George R.R. Martin)
+resposta[posicao] = 2; // Falso (É baseada nos livros de George R.R. Martin)
 categoria[posicao] = 5; // Categoria 5: Entretenimento
 posicao++;
 
 // Pergunta 9
 strcpy(frase[posicao], "A animação 'Frozen' foi lançada pela Pixar.");
-resposta[posicao] = 0; // Falso (Foi lançada pela Disney)
+resposta[posicao] = 2; // Falso (Foi lançada pela Disney)
 categoria[posicao] = 5; // Categoria 5: Entretenimento
 posicao++;
 
@@ -89,19 +89,19 @@ posicao++;
 
 // Pergunta 12
 strcpy(frase[posicao], "O filme 'Jurassic Park' foi baseado em um livro de Stephen King.");
-resposta[posicao] = 0; // Falso (Foi baseado no livro de Michael Crichton)
+resposta[posicao] = 2; // Falso (Foi baseado no livro de Michael Crichton)
 categoria[posicao] = 5; // Categoria 5: Entretenimento
 posicao++;
 
 // Pergunta 13
 strcpy(frase[posicao], "A personagem Elsa de 'Frozen' tem poderes mágicos relacionados ao fogo.");
-resposta[posicao] = 0; // Falso (Ela tem poderes relacionados ao gelo)
+resposta[posicao] = 2; // Falso (Ela tem poderes relacionados ao gelo)
 categoria[posicao] = 5; // Categoria 5: Entretenimento
 posicao++;
 
 // Pergunta 14
 strcpy(frase[posicao], "O filme 'Vingadores: Ultimato' foi o mais lucrativo de todos os tempos.");
-resposta[posicao] = 0; // Falso (Foi 'Avatar' que detém esse título, mas 'Ultimato' é um dos maiores)
+resposta[posicao] = 2; // Falso (Foi 'Avatar' que detém esse título, mas 'Ultimato' é um dos maiores)
 categoria[posicao] = 5; // Categoria 5: Entretenimento
 posicao++;
 
@@ -113,13 +113,13 @@ posicao++;
 
 // Pergunta 16
 strcpy(frase[posicao], "O filme 'Os Vingadores' foi lançado antes de 2010.");
-resposta[posicao] = 0; // Falso (Foi lançado em 2012)
+resposta[posicao] = 2; // Falso (Foi lançado em 2012)
 categoria[posicao] = 5; // Categoria 5: Entretenimento
 posicao++;
 
 // Pergunta 17
 strcpy(frase[posicao], "A atriz Meryl Streep ganhou 3 Oscars.");
-resposta[posicao] = 0; // Falso (Ela ganhou 2 Oscars até agora)
+resposta[posicao] = 2; // Falso (Ela ganhou 2 Oscars até agora)
 categoria[posicao] = 5; // Categoria 5: Entretenimento
 posicao++;
 
@@ -155,7 +155,7 @@ posicao++;
 
 // Pergunta 23
 strcpy(frase[posicao], "O número zero é considerado um número negativo.");
-resposta[posicao] = 0; // Falso (Zero é neutro, nem positivo nem negativo)
+resposta[posicao] = 2; // Falso (Zero é neutro, nem positivo nem negativo)
 categoria[posicao] = 4; // Categoria 4: Matemática
 posicao++;
 
@@ -167,7 +167,7 @@ posicao++;
 
 // Pergunta 25
 strcpy(frase[posicao], "O valor de 2 elevado à terceira potência é 9.");
-resposta[posicao] = 0; // Falso (2^3 = 8)
+resposta[posicao] = 2; // Falso (2^3 = 8)
 categoria[posicao] = 4; // Categoria 4: Matemática
 posicao++;
 
@@ -185,7 +185,7 @@ posicao++;
 
 // Pergunta 28
 strcpy(frase[posicao], "Em um triângulo equilátero, todos os lados são diferentes.");
-resposta[posicao] = 0; // Falso (Em um triângulo equilátero, todos os lados são iguais)
+resposta[posicao] = 2; // Falso (Em um triângulo equilátero, todos os lados são iguais)
 categoria[posicao] = 4; // Categoria 4: Matemática
 posicao++;
 
@@ -196,8 +196,8 @@ categoria[posicao] = 4; // Categoria 4: Matemática
 posicao++;
 
 // Pergunta 30
-strcpy(frase[posicao], "O ângulo reto tem 60 graus.");
-resposta[posicao] = 0; // Falso (O ângulo reto tem 90 graus)
+strcpy(frase[posicao], "O ângulo reto tem 62 graus.");
+resposta[posicao] = 2; // Falso (O ângulo reto tem 90 graus)
 categoria[posicao] = 4; // Categoria 4: Matemática
 posicao++;
 
@@ -215,7 +215,7 @@ posicao++;
 
 // Pergunta 33
 strcpy(frase[posicao], "A fórmula de Bhaskara é usada para resolver equações de primeiro grau.");
-resposta[posicao] = 0; // Falso (É usada para resolver equações quadráticas)
+resposta[posicao] = 2; // Falso (É usada para resolver equações quadráticas)
 categoria[posicao] = 4; // Categoria 4: Matemática
 posicao++;
 
@@ -245,13 +245,13 @@ posicao++;
 
 // Pergunta 38
 strcpy(frase[posicao], "O número π é uma fração exata.");
-resposta[posicao] = 0; // Falso (π é uma constante irracional)
+resposta[posicao] = 2; // Falso (π é uma constante irracional)
 categoria[posicao] = 4; // Categoria 4: Matemática
 posicao++;
 
 // Pergunta 39
 strcpy(frase[posicao], "Um ângulo agudo tem mais de 90 graus.");
-resposta[posicao] = 0; // Falso (Um ângulo agudo tem menos de 90 graus)
+resposta[posicao] = 2; // Falso (Um ângulo agudo tem menos de 90 graus)
 categoria[posicao] = 4; // Categoria 4: Matemática
 posicao++;
 
@@ -275,7 +275,7 @@ posicao++;
 
 // Pergunta 43
 strcpy(frase[posicao], "O Sol é uma estrela do tipo anã branca.");
-resposta[posicao] = 0; // Falso (O Sol é uma estrela do tipo anã amarela)
+resposta[posicao] = 2; // Falso (O Sol é uma estrela do tipo anã amarela)
 categoria[posicao] = 2; // Categoria 2: Ciências
 posicao++;
 
@@ -287,7 +287,7 @@ posicao++;
 
 // Pergunta 45
 strcpy(frase[posicao], "Os dinossauros dominaram a Terra durante o período Cretáceo.");
-resposta[posicao] = 0; // Falso (Eles dominaram durante os períodos Triássico, Jurássico e Cretáceo)
+resposta[posicao] = 2; // Falso (Eles dominaram durante os períodos Triássico, Jurássico e Cretáceo)
 categoria[posicao] = 2; // Categoria 2: Ciências
 posicao++;
 
@@ -305,13 +305,13 @@ posicao++;
 
 // Pergunta 48
 strcpy(frase[posicao], "Os mamíferos são ovíparos.");
-resposta[posicao] = 0; // Falso (A maioria dos mamíferos é vivípara, com exceção dos monotremados)
+resposta[posicao] = 2; // Falso (A maioria dos mamíferos é vivípara, com exceção dos monotremados)
 categoria[posicao] = 2; // Categoria 2: Ciências
 posicao++;
 
 // Pergunta 49
 strcpy(frase[posicao], "A gravidade da Terra foi descoberta por Albert Einstein.");
-resposta[posicao] = 0; // Falso (Foi descoberta por Isaac Newton)
+resposta[posicao] = 2; // Falso (Foi descoberta por Isaac Newton)
 categoria[posicao] = 2; // Categoria 2: Ciências
 posicao++;
 
@@ -377,7 +377,7 @@ posicao++;
 
 // Pergunta 60
 strcpy(frase[posicao], "O maior órgão do corpo humano é o cérebro.");
-resposta[posicao] = 0; // Falso (A pele é o maior órgão do corpo humano)
+resposta[posicao] = 2; // Falso (A pele é o maior órgão do corpo humano)
 categoria[posicao] = 2; // Categoria 2: Ciências
 posicao++;
 
@@ -395,7 +395,7 @@ posicao++;
 
 // Pergunta 63
 strcpy(frase[posicao], "A capital da Austrália é Sydney.");
-resposta[posicao] = 0; // Falso (A capital é Canberra)
+resposta[posicao] = 2; // Falso (A capital é Canberra)
 categoria[posicao] = 1; // Categoria 1: Geografia
 posicao++;
 
@@ -413,7 +413,7 @@ posicao++;
 
 // Pergunta 66
 strcpy(frase[posicao], "A Grande Muralha da China é visível da Lua.");
-resposta[posicao] = 0; // Falso
+resposta[posicao] = 2; // Falso
 categoria[posicao] = 1; // Categoria 1: Geografia
 posicao++;
 
@@ -425,7 +425,7 @@ posicao++;
 
 // Pergunta 68
 strcpy(frase[posicao], "O Monte Kilimanjaro está localizado na África do Sul.");
-resposta[posicao] = 0; // Falso (Está na Tanzânia)
+resposta[posicao] = 2; // Falso (Está na Tanzânia)
 categoria[posicao] = 1; // Categoria 1: Geografia
 posicao++;
 
@@ -437,7 +437,7 @@ posicao++;
 
 // Pergunta 70
 strcpy(frase[posicao], "A capital da Alemanha é Munique.");
-resposta[posicao] = 0; // Falso (A capital é Berlim)
+resposta[posicao] = 2; // Falso (A capital é Berlim)
 categoria[posicao] = 1; // Categoria 1: Geografia
 posicao++;
 
@@ -455,7 +455,7 @@ posicao++;
 
 // Pergunta 73
 strcpy(frase[posicao], "A Ilha de Madagascar é a maior ilha do mundo.");
-resposta[posicao] = 0; // Falso (A maior ilha é a Groenlândia)
+resposta[posicao] = 2; // Falso (A maior ilha é a Groenlândia)
 categoria[posicao] = 1; // Categoria 1: Geografia
 posicao++;
 
@@ -479,7 +479,7 @@ posicao++;
 
 // Pergunta 77
 strcpy(frase[posicao], "O deserto de Gobi está localizado no Brasil.");
-resposta[posicao] = 0; // Falso (Está na China e na Mongólia)
+resposta[posicao] = 2; // Falso (Está na China e na Mongólia)
 categoria[posicao] = 1; // Categoria 1: Geografia
 posicao++;
 
@@ -491,7 +491,7 @@ posicao++;
 
 // Pergunta 79
 strcpy(frase[posicao], "A capital da Índia é Mumbai.");
-resposta[posicao] = 0; // Falso (A capital é Nova Déli)
+resposta[posicao] = 2; // Falso (A capital é Nova Déli)
 categoria[posicao] = 1; // Categoria 1: Geografia
 posicao++;
 
@@ -515,7 +515,7 @@ posicao++;
 
 // Pergunta 83
 strcpy(frase[posicao], "Napoleão Bonaparte nasceu na Itália.");
-resposta[posicao] = 0; // Falso (Ele nasceu na Córsega, que na época era um território francês)
+resposta[posicao] = 2; // Falso (Ele nasceu na Córsega, que na época era um território francês)
 categoria[posicao] = 3; // Categoria 3: História
 posicao++;
 
@@ -533,7 +533,7 @@ posicao++;
 
 // Pergunta 86
 strcpy(frase[posicao], "A Guerra Fria foi um conflito militar entre os Estados Unidos e a União Soviética.");
-resposta[posicao] = 0; // Falso (Foi um confronto ideológico e político, não um conflito militar direto)
+resposta[posicao] = 2; // Falso (Foi um confronto ideológico e político, não um conflito militar direto)
 categoria[posicao] = 3; // Categoria 3: História
 posicao++;
 
@@ -557,13 +557,13 @@ posicao++;
 
 // Pergunta 90
 strcpy(frase[posicao], "A Primeira Guerra Mundial terminou em 1920.");
-resposta[posicao] = 0; // Falso (Terminou em 1918)
+resposta[posicao] = 2; // Falso (Terminou em 1918)
 categoria[posicao] = 3; // Categoria 3: História
 posicao++;
 
 // Pergunta 91
 strcpy(frase[posicao], "Dom Pedro I proclamou a independência do Brasil no Rio de Janeiro.");
-resposta[posicao] = 0; // Falso (A independência foi proclamada em São Paulo)
+resposta[posicao] = 2; // Falso (A independência foi proclamada em São Paulo)
 categoria[posicao] = 3; // Categoria 3: História
 posicao++;
 
@@ -581,7 +581,7 @@ posicao++;
 
 // Pergunta 94
 strcpy(frase[posicao], "A Revolução Industrial teve início na França.");
-resposta[posicao] = 0; // Falso (Teve início na Inglaterra)
+resposta[posicao] = 2; // Falso (Teve início na Inglaterra)
 categoria[posicao] = 3; // Categoria 3: História
 posicao++;
 
@@ -593,7 +593,7 @@ posicao++;
 
 // Pergunta 96
 strcpy(frase[posicao], "O Império Mongol foi fundado por Alexandre, o Grande.");
-resposta[posicao] = 0; // Falso (Foi fundado por Genghis Khan)
+resposta[posicao] = 2; // Falso (Foi fundado por Genghis Khan)
 categoria[posicao] = 3; // Categoria 3: História
 posicao++;
 
