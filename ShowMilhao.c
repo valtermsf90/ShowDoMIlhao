@@ -32,7 +32,7 @@ int main()
     printf("Bem vindo ao Show do Milhão\n");
     while (true)
     {
-        sleep_ms(2000);
+        
         int posicao = rand() % 101;
         numQuestao++;
         printf("PLACAR: %d acertos e %d erros\n\n", acertos, erros);
