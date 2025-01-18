@@ -8,7 +8,8 @@ int posFrase = 0;
 char mensagemPos[100][100];
 char mensagemNeg[100][100];
 
-void frasePositiva(){  
+void frasePositiva(){
+ 
 strcpy(mensagemPos[posFrase], "Muito bem!!! você acertou :D");  // Posição 0
 posFrase++;
 
@@ -50,6 +51,7 @@ posFrase++;
 }
 
 void fraseNegativa(){
+	posFrase = 0;
 
 strcpy(mensagemNeg[posFrase], "Infelizmente, você errou. Tente novamente! :(");  // Posição 0
 posFrase++;

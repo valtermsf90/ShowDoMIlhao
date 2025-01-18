@@ -26,88 +26,99 @@ bool escolha = true;
 bool repetido = true;
 int main()
 {
+    // declaração de variáveis
     posicao = 0;
     int numQuestao = 0;
-    cadastroFrase();
-    frasePositiva();
-    fraseNegativa();
-    stdio_init_all();
-    iniciarPinos(); // Inicializa os pinos
-    srand(time(NULL));
+
+    // chamanado as funções
+    cadastroFrase();   // Cadastra as perguntas
+    frasePositiva();   // Cadastra as frases positivas
+    fraseNegativa();   // Cadastra as frases negativas
+    stdio_init_all();  // Inicializa a biblioteca stdio
+    iniciarPinos();    // Inicializa os pinos
+    srand(time(NULL)); // Inicializa o gerador de números aleatórios
+
+    // Inicializa o jogo
     sleep_ms(5000);
     printf("Bem vindo ao Show do Milhão\n");
     printf("Escola a resposta correta para as perguntas\n\n");
-    while(true){
-    numQuestao++;
-   
-    //randomiza a posição da pergunta
-    posicao = rand() % 100;
-    while (posicao >= 100)
+    while (true)
     {
-      posicao = rand() % 100;
-    }
-    posFrase = rand() % 12;
-    while (posFrase >= 12)
-    {
-      posFrase = rand() % 12;
-    }
-        
-    printf("PLACAR: %d acertos e %d erros\n\n", acertos, erros);
-    printf("%d\tQUESTAO %d\n", posicao, numQuestao);
-    printf("%s\n", frase[posicao]);
-    printf("[A]Verdadeiro\t[B]Falso\n");
+        numQuestao++;
 
+        // randomiza a posição da pergunta
+        posicao = rand() % 100;
+        while (posicao >= 100)
+        {
+            posicao = rand() % 100;
+        }
 
-    while (escolha)
-    {
-        int tecla = 0;
-        if (gpio_get(BUTTON_A) == 0)
+        // randomiza a posição da frase positiva
+        posFrase = rand() % 12;
+        while (posFrase >= 12)
         {
-            tecla = 1;
-            opcao = 'A';
+            posFrase = rand() % 12;
         }
-        else if (gpio_get(BUTTON_B) == 0)
+
+        // placar e pergunta
+        printf("PLACAR: %d acertos e %d erros\n\n", acertos, erros);
+        printf("%d\tQUESTAO %d\n", posicao, numQuestao);
+        printf("%s\n", frase[posicao]);
+        printf("[A]Verdadeiro\t[B]Falso\n");
+
+        // verifica a resposta
+        while (escolha)
         {
-            tecla = 2;
-            opcao = 'B';
-        }
-        if (tecla != 0)
-        {
-            printf("Voce escolheu a opcao %c\n", opcao);
-            if (tecla == resposta[posicao])
+            int tecla = 0;
+            if (gpio_get(BUTTON_A) == 0) // verifica se o botão A foi pressionado
             {
-                buzzer_A(100);
-                printf("%s,\n\n", mensagemPos[posFrase]);
-                for (int i = 0; i < 6; i++)
-                {
-                    verde(100);
-                    apagado(50);
-                }
-                buzzer_A_OFF();
-                escolha = false;
-                acertos++;
-                sleep_ms(1000);
+                tecla = 1;
+                opcao = 'A';
             }
-            else
+            else if (gpio_get(BUTTON_B) == 0) // verifica se o botão B foi pressionado
             {
-                buzzer_B(100);
-                printf("%s\n\n", mensagemNeg[posFrase]);
-                for (int i = 0; i < 3; i++)
+
+                tecla = 2;
+                opcao = 'B';
+            }
+            if (tecla != 0)
+            {
+                printf("Voce escolheu a opcao %c\n", opcao);
+                if (tecla == resposta[posicao]) // verifica se a resposta está correta
                 {
-                    vermelho(100);
-                    apagado(50);
+                    // mensagem de acerto
+                    buzzer_A(100);
+                    printf("%s\n\n", mensagemPos[posFrase]);
+                    for (int i = 0; i < 6; i++)
+                    {
+                        verde(100);
+                        apagado(50);
+                    }
+                    buzzer_A_OFF();
+                    escolha = false;
+                    acertos++;
+                    sleep_ms(1000);
                 }
-                buzzer_B_OFF();
-                erros++;
-                escolha = false;
-                sleep_ms(1000);
+                else
+                {
+                    // mensagem de erro
+                    buzzer_B(100);
+                    printf("%s\n\n", mensagemNeg[posFrase]);
+                    for (int i = 0; i < 3; i++)
+                    {
+                        vermelho(100);
+                        apagado(50);
+                    }
+                    buzzer_B_OFF();
+                    erros++;
+                    escolha = false;
+                    sleep_ms(1000);
+                }
             }
         }
+        // reinicia o jogo
+        posicao++;
+        escolha = true;
     }
-    posicao++;
-    escolha = true;
+    return 0;
 }
-return 0;
-}
-
-
