@@ -34,6 +34,9 @@ void iniciarPinos()
   gpio_init(BUTTON_B);
   gpio_set_dir(BUTTON_B, GPIO_IN);
   gpio_pull_up(BUTTON_B);
+  gpio_init(BUTTON_J);
+  gpio_set_dir(BUTTON_J, GPIO_IN);
+  gpio_pull_up(BUTTON_J);
   
 }
 
