@@ -16,6 +16,7 @@
 #define BUTTON_J 22
 #define TIME 300
 
+char opcao;
 int lista[100];
 int acertos = 0;
 int erros = 0;
@@ -51,17 +52,20 @@ int main()
         if (gpio_get(BUTTON_A) == 0)
         {
             tecla = 1;
+            opcao = 'A';
         }
         else if (gpio_get(BUTTON_B) == 0)
         {
             tecla = 2;
+            opcao = 'B';
         }
         if (tecla != 0)
         {
+            printf("Voce escolheu a opcao %c\n", opcao);
             if (tecla == resposta[posicao])
             {
                 buzzer_A(100);
-                printf("Resposta correta\n\n");
+                printf("Muito bem!!! você acertou :D\n\n");
                 for (int i = 0; i < 6; i++)
                 {
                     verde(100);
@@ -75,7 +79,7 @@ int main()
             else
             {
                 buzzer_B(100);
-                printf("Resposta incorreta\n\n");
+                printf("Que pena, resposta errada. :(\n\n");
                 for (int i = 0; i < 3; i++)
                 {
                     vermelho(100);
