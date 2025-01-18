@@ -5,454 +5,619 @@
 #include "perguntas.h"
 
 int posicao = 0;
-char frase[100][100];
-int resposta[100];
-char fraseGeogafia[50][100];
-
-
+char frase[150][100];
+int resposta[150];
+int categoria[150];
+/*
+1 - Geografia
+2 - Ciências
+3 - História
+4 - Matemática
+5 - Entretenimento
+6 - todos
+*/
 
 void cadastroFrase()
+
 {
 
   // Pergunta 1
-  strcpy(frase[posicao], "O Monte Everest é a montanha mais alta do mundo.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  // Pergunta 2
-  strcpy(frase[posicao], "As baleias são mamíferos.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  // Pergunta 3
-  strcpy(frase[posicao], "O Deserto do Saara é o maior deserto do mundo.");
-  resposta[posicao] = 0; // Falso (O maior é a Antártida, considerando deserto polar)
-  posicao++;
-
-  // Pergunta 4
-  strcpy(frase[posicao], "O cérebro humano tem cerca de 100 bilhões de neurônios.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  // Pergunta 5
-  strcpy(frase[posicao], "O Brasil é o único país da América do Sul que fala espanhol.");
-  resposta[posicao] = 0; // Falso (A língua oficial é o português)
-  posicao++;
-
-  // Pergunta 6
-  strcpy(frase[posicao], "O mel é o único alimento que nunca estraga.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  // Pergunta 7
-  strcpy(frase[posicao], "A Torre Eiffel foi projetada por um arquiteto italiano.");
-  resposta[posicao] = 0; // Falso (Foi projetada pelo francês Gustave Eiffel)
-  posicao++;
-
-  // Pergunta 8
-  strcpy(frase[posicao], "Os golfinhos dormem com metade do cérebro acordado.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  // Pergunta 9
-  strcpy(frase[posicao], "A Lua é maior do que Plutão.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  // Pergunta 10
-  strcpy(frase[posicao], "Os cangurus só existem na Austrália.");
-  resposta[posicao] = 0; // Falso (Existem em algumas ilhas próximas)
-  posicao++;
-
-  // Pergunta 11
-  strcpy(frase[posicao], "O café foi descoberto na Etiópia.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  // Pergunta 12
-  strcpy(frase[posicao], "Os humanos compartilham cerca de 60% do DNA com bananas.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  // Pergunta 13
-  strcpy(frase[posicao], "O primeiro computador do mundo ocupava o tamanho de um quarto.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  // Pergunta 14
-  strcpy(frase[posicao], "O Oceano Pacífico é menor que o Oceano Atlântico.");
-  resposta[posicao] = 0; // Falso (O Pacífico é o maior oceano)
-  posicao++;
-
-  // Pergunta 15
-  strcpy(frase[posicao], "A Terra tem exatamente 24 horas por dia.");
-  resposta[posicao] = 0; // Falso (O dia solar médio é de 24 horas e alguns segundos)
-  posicao++;
-
-  // Pergunta 16
-  strcpy(frase[posicao], "As formigas conseguem carregar até 50 vezes o próprio peso.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  // Pergunta 17
-  strcpy(frase[posicao], "O sol é composto principalmente de oxigênio.");
-  resposta[posicao] = 0; // Falso (É composto principalmente de hidrogênio e hélio)
-  posicao++;
-
-  // Pergunta 18
-  strcpy(frase[posicao], "O menor país do mundo em área é o Vaticano.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  // Pergunta 19
-  strcpy(frase[posicao], "O sangue humano é sempre vermelho, mesmo dentro do corpo.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  // Pergunta 20
-  strcpy(frase[posicao], "A Amazônia cobre mais de 50% do território brasileiro.");
-  resposta[posicao] = 0; // Falso (Cobre cerca de 40%)
-  posicao++;
-
-  // Pergunta 21
-  strcpy(frase[posicao], "Os tubarões são peixes que não possuem ossos.");
-  resposta[posicao] = 1; // Verdadeiro (Eles possuem cartilagem)
-  posicao++;
-
-  // Pergunta 22
-  strcpy(frase[posicao], "O calor faz a água ferver mais rápido em altas altitudes.");
-  resposta[posicao] = 0; // Falso (Ela ferve a temperaturas mais baixas em altitudes elevadas)
-  posicao++;
-
-  // Pergunta 23
-  strcpy(frase[posicao], "O maior animal terrestre é o elefante africano.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  // Pergunta 24
-  strcpy(frase[posicao], "O idioma mais falado no mundo é o inglês.");
-  resposta[posicao] = 0; // Falso (O mais falado é o mandarim)
-  posicao++;
-
-  // Pergunta 25
-  strcpy(frase[posicao], "O corpo humano tem 206 ossos na fase adulta.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  // Pergunta 26
-  strcpy(frase[posicao], "O Triângulo das Bermudas está localizado no Oceano Atlântico.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  // Pergunta 27
-  strcpy(frase[posicao], "O coração humano bate cerca de 100 mil vezes por dia.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  // Pergunta 28
-  strcpy(frase[posicao], "O chocolate branco não é tecnicamente chocolate.");
-  resposta[posicao] = 1; // Verdadeiro (Não contém sólidos de cacau)
-  posicao++;
-
-  // Pergunta 29
-  strcpy(frase[posicao], "A Estátua da Liberdade foi um presente da Inglaterra para os Estados Unidos.");
-  resposta[posicao] = 0; // Falso (Foi um presente da França)
-  posicao++;
-
-  // Pergunta 30
-  strcpy(frase[posicao], "Os pinguins são encontrados apenas no hemisfério sul.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  // Pergunta 31
-  strcpy(frase[posicao], "Os vulcões podem existir debaixo d'água.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  // Pergunta 32
-  strcpy(frase[posicao], "O idioma oficial da Suíça é apenas o alemão.");
-  resposta[posicao] = 0; // Falso (Há quatro idiomas oficiais)
-  posicao++;
-
-  // Pergunta 33
-  strcpy(frase[posicao], "O leite de hipopótamo é de cor rosa.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  // Pergunta 34
-  strcpy(frase[posicao], "Os dinossauros existiram há mais de 65 milhões de anos.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  // Pergunta 35
-  strcpy(frase[posicao], "A eletricidade foi descoberta por Thomas Edison.");
-  resposta[posicao] = 0; // Falso (Foi Benjamin Franklin que fez experimentos pioneiros)
-  posicao++;
-
-  // Pergunta 36
-  strcpy(frase[posicao], "A capital do Canadá é Toronto.");
-  resposta[posicao] = 0; // Falso (A capital é Ottawa)
-  posicao++;
-
-  // Pergunta 37
-  strcpy(frase[posicao], "A baleia azul é o maior animal que já existiu na Terra.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  // Pergunta 38
-  strcpy(frase[posicao], "Os humanos possuem cinco sentidos no total.");
-  resposta[posicao] = 0; // Falso (Há mais sentidos, como equilíbrio e percepção de temperatura)
-  posicao++;
-
-  // Pergunta 39
-  strcpy(frase[posicao], "O oxigênio é o elemento mais abundante na crosta terrestre.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  // Pergunta 40
-  strcpy(frase[posicao], "O Mar Morto é um lago de água salgada.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "A constante de Planck tem o valor aproximado de 6,63 × 10^-34 J·s.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "A primeira vacina desenvolvida foi contra a varíola.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "O metal mais abundante na crosta terrestre é o ferro.");
-  resposta[posicao] = 2; // Falso
-  posicao++;
-
-  strcpy(frase[posicao], "A cidade de Constantinopla foi renomeada para Istambul em 1930.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "A partícula responsável pela força nuclear forte é o bóson de Higgs.");
-  resposta[posicao] = 2; // Falso
-  posicao++;
-
-  strcpy(frase[posicao], "A Primeira Guerra Mundial terminou em 11 de novembro de 1918.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "A teoria do Big Bang foi proposta originalmente por Georges Lemaître.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "O planeta Vênus gira no sentido horário, diferente da maioria dos planetas do Sistema Solar.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "A fórmula matemática E=mc² foi introduzida na teoria da gravitação universal.");
-  resposta[posicao] = 2; // Falso
-  posicao++;
-
-  strcpy(frase[posicao], "A menor partícula conhecida é o neutrino.");
-  resposta[posicao] = 2; // Falso
-  posicao++;
-
-  strcpy(frase[posicao], "O Mar Cáspio é classificado como um lago e não como um mar.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "A unidade de medida para a força no Sistema Internacional é o newton.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "O reino fungi inclui organismos como algas e cogumelos.");
-  resposta[posicao] = 2; // Falso
-  posicao++;
-
-  strcpy(frase[posicao], "A Aurora Boreal ocorre em latitudes próximas ao Polo Norte.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "Os elementos de transição na tabela periódica ocupam o bloco 's'.");
-  resposta[posicao] = 2; // Falso
-  posicao++;
-
-  strcpy(frase[posicao], "A capital da Mongólia é Ulaanbaatar.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "A língua mais falada no mundo é o mandarim.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "A proteína responsável pelo transporte de oxigênio no sangue é a mioglobina.");
-  resposta[posicao] = 2; // Falso
-  posicao++;
-
-  strcpy(frase[posicao], "O hélio é o elemento mais leve da tabela periódica.");
-  resposta[posicao] = 2; // Falso
-  posicao++;
-
-  strcpy(frase[posicao], "O telescópio Hubble foi lançado em 1990.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "O ponto mais profundo do oceano é conhecido como Fossa das Marianas.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "A velocidade da luz no vácuo é de aproximadamente 300.000 km/s.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "A língua oficial da Etiópia é o Árabe.");
-  resposta[posicao] = 2; // Falso
-  posicao++;
-
-  strcpy(frase[posicao], "A primeira lei de Newton também é conhecida como Lei da Inércia.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "O planeta Marte possui 5 luas.");
-  resposta[posicao] = 2; // Falso
-  posicao++;
-
-  strcpy(frase[posicao], "A teoria da relatividade foi formulada por Albert Einstein.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "A baleia-jubarte é conhecida por ser o animal mais rápido do oceano.");
-  resposta[posicao] = 2; // Falso
-  posicao++;
-
-  strcpy(frase[posicao], "A capital da Austrália é Sydney.");
-  resposta[posicao] = 2; // Falso
-  posicao++;
-
-  strcpy(frase[posicao], "O elemento químico com símbolo 'Hg' é o Mercúrio.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "A cordilheira dos Andes é a mais longa do mundo.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "A fórmula química do sal de cozinha é NaCl.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "O maior deserto gelado do mundo é o Ártico.");
-  resposta[posicao] = 2; // Falso
-  posicao++;
-
-  strcpy(frase[posicao], "A maior população de língua inglesa está na Índia.");
-  resposta[posicao] = 2; // Falso
-  posicao++;
-
-  strcpy(frase[posicao], "O piano foi inventado por Bartolomeo Cristofori.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "A estrela mais próxima da Terra, além do Sol, é a Alfa Centauri.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "O Monte Everest é a montanha mais alta do mundo medida do centro da Terra.");
-  resposta[posicao] = 2; // Falso
-  posicao++;
-
-  strcpy(frase[posicao], "A Via Láctea é uma galáxia do tipo elíptica.");
-  resposta[posicao] = 2; // Falso
-  posicao++;
-
-  strcpy(frase[posicao], "A Antártida contém cerca de 70% da água doce do mundo.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "O planeta Júpiter possui mais de 70 luas conhecidas.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "A unidade de medida 'joule' é usada para energia.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "O Brasil é o maior país do mundo.");
-  resposta[posicao] = 2; // Falso
-  posicao++;
-
-  strcpy(frase[posicao], "A água ferve a 100 graus Celsius ao nível do mar.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "Os humanos têm três corações.");
-  resposta[posicao] = 2; // Falso
-  posicao++;
-
-  strcpy(frase[posicao], "O Sol é uma estrela.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "O Egito fica na Ásia.");
-  resposta[posicao] = 2; // Falso
-  posicao++;
-
-  strcpy(frase[posicao], "Os peixes respiram oxigênio dissolvido na água.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "O menor osso do corpo humano está no ouvido.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "O Oceano Atlântico é o maior oceano do mundo.");
-  resposta[posicao] = 2; // Falso
-  posicao++;
-
-  strcpy(frase[posicao], "A Lua é um planeta.");
-  resposta[posicao] = 2; // Falso
-  posicao++;
-
-  strcpy(frase[posicao], "Um ano tem 365 dias, exceto nos anos bissextos.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "A Torre Eiffel fica na Alemanha.");
-  resposta[posicao] = 2; // Falso
-  posicao++;
-
-  strcpy(frase[posicao], "O canguru é um animal típico da Austrália.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "A Terra tem dois satélites naturais.");
-  resposta[posicao] = 2; // Falso
-  posicao++;
-
-  strcpy(frase[posicao], "O piano é considerado um instrumento de cordas.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "O Japão é formado por mais de 6.000 ilhas.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "O chocolate é feito de cacau.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "A capital da Argentina é Santiago.");
-  resposta[posicao] = 2; // Falso
-  posicao++;
-
-  strcpy(frase[posicao], "A baleia-azul é o maior animal do mundo.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "O Big Ben é o nome do sino, e não da torre.");
-  resposta[posicao] = 1; // Verdadeiro
-  posicao++;
-
-  strcpy(frase[posicao], "A Grande Muralha da China pode ser vista do espaço.");
-  resposta[posicao] = 2; // Falso
-  posicao++;
-  printf("Frase cadastrada com sucesso\n");
-  printf("%d\n", posicao);
+strcpy(frase[posicao], "A primeira temporada da série 'Stranger Things' foi lançada em 2016.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 5; // Categoria 5: Entretenimento
+posicao++;
+
+// Pergunta 2
+strcpy(frase[posicao], "O filme 'Titanic' foi dirigido por James Cameron.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 5; // Categoria 5: Entretenimento
+posicao++;
+
+// Pergunta 3
+strcpy(frase[posicao], "A série 'Breaking Bad' foi lançada em 2010.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 5; // Categoria 5: Entretenimento
+posicao++;
+
+// Pergunta 4
+strcpy(frase[posicao], "O personagem Harry Potter é interpretado por Daniel Radcliffe.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 5; // Categoria 5: Entretenimento
+posicao++;
+
+// Pergunta 5
+strcpy(frase[posicao], "O filme 'Avatar' foi lançado após 2010.");
+resposta[posicao] = 0; // Falso (Foi lançado em 2009)
+categoria[posicao] = 5; // Categoria 5: Entretenimento
+posicao++;
+
+// Pergunta 6
+strcpy(frase[posicao], "O cantor Michael Jackson era conhecido como o 'Rei do Pop'.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 5; // Categoria 5: Entretenimento
+posicao++;
+
+// Pergunta 7
+strcpy(frase[posicao], "A atriz Scarlett Johansson interpretou a personagem Viúva Negra no MCU.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 5; // Categoria 5: Entretenimento
+posicao++;
+
+// Pergunta 8
+strcpy(frase[posicao], "A série 'Game of Thrones' é baseada nos livros de J.R.R. Tolkien.");
+resposta[posicao] = 0; // Falso (É baseada nos livros de George R.R. Martin)
+categoria[posicao] = 5; // Categoria 5: Entretenimento
+posicao++;
+
+// Pergunta 9
+strcpy(frase[posicao], "A animação 'Frozen' foi lançada pela Pixar.");
+resposta[posicao] = 0; // Falso (Foi lançada pela Disney)
+categoria[posicao] = 5; // Categoria 5: Entretenimento
+posicao++;
+
+// Pergunta 10
+strcpy(frase[posicao], "O filme 'O Senhor dos Anéis' foi filmado na Nova Zelândia.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 5; // Categoria 5: Entretenimento
+posicao++;
+
+// Pergunta 11
+strcpy(frase[posicao], "O personagem James Bond foi interpretado por Roger Moore em 7 filmes.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 5; // Categoria 5: Entretenimento
+posicao++;
+
+// Pergunta 12
+strcpy(frase[posicao], "O filme 'Jurassic Park' foi baseado em um livro de Stephen King.");
+resposta[posicao] = 0; // Falso (Foi baseado no livro de Michael Crichton)
+categoria[posicao] = 5; // Categoria 5: Entretenimento
+posicao++;
+
+// Pergunta 13
+strcpy(frase[posicao], "A personagem Elsa de 'Frozen' tem poderes mágicos relacionados ao fogo.");
+resposta[posicao] = 0; // Falso (Ela tem poderes relacionados ao gelo)
+categoria[posicao] = 5; // Categoria 5: Entretenimento
+posicao++;
+
+// Pergunta 14
+strcpy(frase[posicao], "O filme 'Vingadores: Ultimato' foi o mais lucrativo de todos os tempos.");
+resposta[posicao] = 0; // Falso (Foi 'Avatar' que detém esse título, mas 'Ultimato' é um dos maiores)
+categoria[posicao] = 5; // Categoria 5: Entretenimento
+posicao++;
+
+// Pergunta 15
+strcpy(frase[posicao], "O personagem Darth Vader é da franquia 'Star Wars'.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 5; // Categoria 5: Entretenimento
+posicao++;
+
+// Pergunta 16
+strcpy(frase[posicao], "O filme 'Os Vingadores' foi lançado antes de 2010.");
+resposta[posicao] = 0; // Falso (Foi lançado em 2012)
+categoria[posicao] = 5; // Categoria 5: Entretenimento
+posicao++;
+
+// Pergunta 17
+strcpy(frase[posicao], "A atriz Meryl Streep ganhou 3 Oscars.");
+resposta[posicao] = 0; // Falso (Ela ganhou 2 Oscars até agora)
+categoria[posicao] = 5; // Categoria 5: Entretenimento
+posicao++;
+
+// Pergunta 18
+strcpy(frase[posicao], "A série 'Friends' é ambientada na cidade de Nova York.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 5; // Categoria 5: Entretenimento
+posicao++;
+
+// Pergunta 19
+strcpy(frase[posicao], "A trilha sonora de 'Guardians of the Galaxy' é composta por músicas clássicas dos anos 80.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 5; // Categoria 5: Entretenimento
+posicao++;
+
+// Pergunta 20
+strcpy(frase[posicao], "O ator Robert Downey Jr. foi o primeiro a interpretar o personagem Homem de Ferro no MCU.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 5; // Categoria 5: Entretenimento
+posicao++;
+
+// Pergunta 21
+strcpy(frase[posicao], "A soma dos ângulos internos de um triângulo é sempre 180 graus.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 4; // Categoria 4: Matemática
+posicao++;
+
+// Pergunta 22
+strcpy(frase[posicao], "O número π (pi) é uma constante irracional que representa a razão entre a circunferência de um círculo e seu diâmetro.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 4; // Categoria 4: Matemática
+posicao++;
+
+// Pergunta 23
+strcpy(frase[posicao], "O número zero é considerado um número negativo.");
+resposta[posicao] = 0; // Falso (Zero é neutro, nem positivo nem negativo)
+categoria[posicao] = 4; // Categoria 4: Matemática
+posicao++;
+
+// Pergunta 24
+strcpy(frase[posicao], "O quadrado de 12 é 144.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 4; // Categoria 4: Matemática
+posicao++;
+
+// Pergunta 25
+strcpy(frase[posicao], "O valor de 2 elevado à terceira potência é 9.");
+resposta[posicao] = 0; // Falso (2^3 = 8)
+categoria[posicao] = 4; // Categoria 4: Matemática
+posicao++;
+
+// Pergunta 26
+strcpy(frase[posicao], "O número 17 é um número primo.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 4; // Categoria 4: Matemática
+posicao++;
+
+// Pergunta 27
+strcpy(frase[posicao], "O valor de π é aproximadamente 3,14.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 4; // Categoria 4: Matemática
+posicao++;
+
+// Pergunta 28
+strcpy(frase[posicao], "Em um triângulo equilátero, todos os lados são diferentes.");
+resposta[posicao] = 0; // Falso (Em um triângulo equilátero, todos os lados são iguais)
+categoria[posicao] = 4; // Categoria 4: Matemática
+posicao++;
+
+// Pergunta 29
+strcpy(frase[posicao], "A raiz quadrada de 81 é 9.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 4; // Categoria 4: Matemática
+posicao++;
+
+// Pergunta 30
+strcpy(frase[posicao], "O ângulo reto tem 60 graus.");
+resposta[posicao] = 0; // Falso (O ângulo reto tem 90 graus)
+categoria[posicao] = 4; // Categoria 4: Matemática
+posicao++;
+
+// Pergunta 31
+strcpy(frase[posicao], "A fórmula para calcular a área do círculo é A = πr².");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 4; // Categoria 4: Matemática
+posicao++;
+
+// Pergunta 32
+strcpy(frase[posicao], "O número 25 é um quadrado perfeito.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 4; // Categoria 4: Matemática
+posicao++;
+
+// Pergunta 33
+strcpy(frase[posicao], "A fórmula de Bhaskara é usada para resolver equações de primeiro grau.");
+resposta[posicao] = 0; // Falso (É usada para resolver equações quadráticas)
+categoria[posicao] = 4; // Categoria 4: Matemática
+posicao++;
+
+// Pergunta 34
+strcpy(frase[posicao], "A soma dos ângulos internos de um quadrilátero é 360 graus.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 4; // Categoria 4: Matemática
+posicao++;
+
+// Pergunta 35
+strcpy(frase[posicao], "O número 100 é divisível por 5.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 4; // Categoria 4: Matemática
+posicao++;
+
+// Pergunta 36
+strcpy(frase[posicao], "A soma de 10 e 15 é 25.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 4; // Categoria 4: Matemática
+posicao++;
+
+// Pergunta 37
+strcpy(frase[posicao], "O volume de um cubo é dado pela fórmula V = a³, onde 'a' é o comprimento de um dos lados.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 4; // Categoria 4: Matemática
+posicao++;
+
+// Pergunta 38
+strcpy(frase[posicao], "O número π é uma fração exata.");
+resposta[posicao] = 0; // Falso (π é uma constante irracional)
+categoria[posicao] = 4; // Categoria 4: Matemática
+posicao++;
+
+// Pergunta 39
+strcpy(frase[posicao], "Um ângulo agudo tem mais de 90 graus.");
+resposta[posicao] = 0; // Falso (Um ângulo agudo tem menos de 90 graus)
+categoria[posicao] = 4; // Categoria 4: Matemática
+posicao++;
+
+// Pergunta 40
+strcpy(frase[posicao], "O número 9 é um número ímpar.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 4; // Categoria 4: Matemática
+posicao++;
+
+// Pergunta 41
+strcpy(frase[posicao], "A água é composta por dois átomos de hidrogênio e um átomo de oxigênio.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 2; // Categoria 2: Ciências
+posicao++;
+
+// Pergunta 42
+strcpy(frase[posicao], "A fotossíntese é o processo pelo qual as plantas convertem luz solar em energia química.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 2; // Categoria 2: Ciências
+posicao++;
+
+// Pergunta 43
+strcpy(frase[posicao], "O Sol é uma estrela do tipo anã branca.");
+resposta[posicao] = 0; // Falso (O Sol é uma estrela do tipo anã amarela)
+categoria[posicao] = 2; // Categoria 2: Ciências
+posicao++;
+
+// Pergunta 44
+strcpy(frase[posicao], "O oxigênio é essencial para a respiração celular dos animais.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 2; // Categoria 2: Ciências
+posicao++;
+
+// Pergunta 45
+strcpy(frase[posicao], "Os dinossauros dominaram a Terra durante o período Cretáceo.");
+resposta[posicao] = 0; // Falso (Eles dominaram durante os períodos Triássico, Jurássico e Cretáceo)
+categoria[posicao] = 2; // Categoria 2: Ciências
+posicao++;
+
+// Pergunta 46
+strcpy(frase[posicao], "A camada de ozônio protege a Terra dos raios ultravioletas do Sol.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 2; // Categoria 2: Ciências
+posicao++;
+
+// Pergunta 47
+strcpy(frase[posicao], "O DNA está presente em todas as células dos seres vivos.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 2; // Categoria 2: Ciências
+posicao++;
+
+// Pergunta 48
+strcpy(frase[posicao], "Os mamíferos são ovíparos.");
+resposta[posicao] = 0; // Falso (A maioria dos mamíferos é vivípara, com exceção dos monotremados)
+categoria[posicao] = 2; // Categoria 2: Ciências
+posicao++;
+
+// Pergunta 49
+strcpy(frase[posicao], "A gravidade da Terra foi descoberta por Albert Einstein.");
+resposta[posicao] = 0; // Falso (Foi descoberta por Isaac Newton)
+categoria[posicao] = 2; // Categoria 2: Ciências
+posicao++;
+
+// Pergunta 50
+strcpy(frase[posicao], "O sistema solar é composto por 8 planetas.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 2; // Categoria 2: Ciências
+posicao++;
+
+// Pergunta 51
+strcpy(frase[posicao], "O corpo humano possui 206 ossos.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 2; // Categoria 2: Ciências
+posicao++;
+
+// Pergunta 52
+strcpy(frase[posicao], "Os elefantes são os maiores mamíferos terrestres.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 2; // Categoria 2: Ciências
+posicao++;
+
+// Pergunta 53
+strcpy(frase[posicao], "A Terra é o único planeta do sistema solar conhecido por abrigar vida.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 2; // Categoria 2: Ciências
+posicao++;
+
+// Pergunta 54
+strcpy(frase[posicao], "O cérebro humano tem aproximadamente 100 bilhões de neurônios.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 2; // Categoria 2: Ciências
+posicao++;
+
+// Pergunta 55
+strcpy(frase[posicao], "A teoria da evolução foi proposta por Charles Darwin.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 2; // Categoria 2: Ciências
+posicao++;
+
+// Pergunta 56
+strcpy(frase[posicao], "Os gases se expandem para preencher qualquer recipiente.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 2; // Categoria 2: Ciências
+posicao++;
+
+// Pergunta 57
+strcpy(frase[posicao], "A luz viaja mais rápido do que o som.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 2; // Categoria 2: Ciências
+posicao++;
+
+// Pergunta 58
+strcpy(frase[posicao], "O aço é uma liga metálica composta principalmente por ferro e carbono.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 2; // Categoria 2: Ciências
+posicao++;
+
+// Pergunta 59
+strcpy(frase[posicao], "As plantas carnívoras se alimentam de pequenos animais, como insetos.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 2; // Categoria 2: Ciências
+posicao++;
+
+// Pergunta 60
+strcpy(frase[posicao], "O maior órgão do corpo humano é o cérebro.");
+resposta[posicao] = 0; // Falso (A pele é o maior órgão do corpo humano)
+categoria[posicao] = 2; // Categoria 2: Ciências
+posicao++;
+
+// Pergunta 61
+strcpy(frase[posicao], "O Rio Amazonas é o maior rio do mundo em volume de água.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 1; // Categoria 1: Geografia
+posicao++;
+
+// Pergunta 62
+strcpy(frase[posicao], "O Monte Everest está localizado no Nepal.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 1; // Categoria 1: Geografia
+posicao++;
+
+// Pergunta 63
+strcpy(frase[posicao], "A capital da Austrália é Sydney.");
+resposta[posicao] = 0; // Falso (A capital é Canberra)
+categoria[posicao] = 1; // Categoria 1: Geografia
+posicao++;
+
+// Pergunta 64
+strcpy(frase[posicao], "O deserto do Saara está localizado na África.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 1; // Categoria 1: Geografia
+posicao++;
+
+// Pergunta 65
+strcpy(frase[posicao], "A cidade de Tóquio é a capital do Japão.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 1; // Categoria 1: Geografia
+posicao++;
+
+// Pergunta 66
+strcpy(frase[posicao], "A Grande Muralha da China é visível da Lua.");
+resposta[posicao] = 0; // Falso
+categoria[posicao] = 1; // Categoria 1: Geografia
+posicao++;
+
+// Pergunta 67
+strcpy(frase[posicao], "O Lago Baikal, na Rússia, é o lago mais profundo do mundo.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 1; // Categoria 1: Geografia
+posicao++;
+
+// Pergunta 68
+strcpy(frase[posicao], "O Monte Kilimanjaro está localizado na África do Sul.");
+resposta[posicao] = 0; // Falso (Está na Tanzânia)
+categoria[posicao] = 1; // Categoria 1: Geografia
+posicao++;
+
+// Pergunta 69
+strcpy(frase[posicao], "A Rússia é o maior país do mundo em termos de área.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 1; // Categoria 1: Geografia
+posicao++;
+
+// Pergunta 70
+strcpy(frase[posicao], "A capital da Alemanha é Munique.");
+resposta[posicao] = 0; // Falso (A capital é Berlim)
+categoria[posicao] = 1; // Categoria 1: Geografia
+posicao++;
+
+// Pergunta 71
+strcpy(frase[posicao], "A Antártida é o continente mais frio do planeta.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 1; // Categoria 1: Geografia
+posicao++;
+
+// Pergunta 72
+strcpy(frase[posicao], "O Rio Nilo é o maior rio da África.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 1; // Categoria 1: Geografia
+posicao++;
+
+// Pergunta 73
+strcpy(frase[posicao], "A Ilha de Madagascar é a maior ilha do mundo.");
+resposta[posicao] = 0; // Falso (A maior ilha é a Groenlândia)
+categoria[posicao] = 1; // Categoria 1: Geografia
+posicao++;
+
+// Pergunta 74
+strcpy(frase[posicao], "O Everest está localizado na fronteira entre o Nepal e o Tibete.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 1; // Categoria 1: Geografia
+posicao++;
+
+// Pergunta 75
+strcpy(frase[posicao], "O Oceano Pacífico é o maior oceano do mundo.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 1; // Categoria 1: Geografia
+posicao++;
+
+// Pergunta 76
+strcpy(frase[posicao], "A ilha de Borneo é dividida por três países: Malásia, Indonésia e Brunei.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 1; // Categoria 1: Geografia
+posicao++;
+
+// Pergunta 77
+strcpy(frase[posicao], "O deserto de Gobi está localizado no Brasil.");
+resposta[posicao] = 0; // Falso (Está na China e na Mongólia)
+categoria[posicao] = 1; // Categoria 1: Geografia
+posicao++;
+
+// Pergunta 78
+strcpy(frase[posicao], "O Monte Fuji é uma montanha sagrada no Japão.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 1; // Categoria 1: Geografia
+posicao++;
+
+// Pergunta 79
+strcpy(frase[posicao], "A capital da Índia é Mumbai.");
+resposta[posicao] = 0; // Falso (A capital é Nova Déli)
+categoria[posicao] = 1; // Categoria 1: Geografia
+posicao++;
+
+// Pergunta 80
+strcpy(frase[posicao], "O Canal do Panamá conecta o Oceano Atlântico ao Oceano Pacífico.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 1; // Categoria 1: Geografia
+posicao++;
+
+// Pergunta 81
+strcpy(frase[posicao], "A Revolução Francesa começou em 1789.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 3; // Categoria 3: História
+posicao++;
+
+// Pergunta 82
+strcpy(frase[posicao], "Cristóvão Colombo descobriu a América em 1492.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 3; // Categoria 3: História
+posicao++;
+
+// Pergunta 83
+strcpy(frase[posicao], "Napoleão Bonaparte nasceu na Itália.");
+resposta[posicao] = 0; // Falso (Ele nasceu na Córsega, que na época era um território francês)
+categoria[posicao] = 3; // Categoria 3: História
+posicao++;
+
+// Pergunta 84
+strcpy(frase[posicao], "O Império Romano durou mais de mil anos.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 3; // Categoria 3: História
+posicao++;
+
+// Pergunta 85
+strcpy(frase[posicao], "O muro de Berlim foi derrubado em 1989.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 3; // Categoria 3: História
+posicao++;
+
+// Pergunta 86
+strcpy(frase[posicao], "A Guerra Fria foi um conflito militar entre os Estados Unidos e a União Soviética.");
+resposta[posicao] = 0; // Falso (Foi um confronto ideológico e político, não um conflito militar direto)
+categoria[posicao] = 3; // Categoria 3: História
+posicao++;
+
+// Pergunta 87
+strcpy(frase[posicao], "A Idade Média durou aproximadamente de 500 a 1500 d.C.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 3; // Categoria 3: História
+posicao++;
+
+// Pergunta 88
+strcpy(frase[posicao], "A Segunda Guerra Mundial começou em 1939.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 3; // Categoria 3: História
+posicao++;
+
+// Pergunta 89
+strcpy(frase[posicao], "O Brasil se tornou independente de Portugal em 1822.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 3; // Categoria 3: História
+posicao++;
+
+// Pergunta 90
+strcpy(frase[posicao], "A Primeira Guerra Mundial terminou em 1920.");
+resposta[posicao] = 0; // Falso (Terminou em 1918)
+categoria[posicao] = 3; // Categoria 3: História
+posicao++;
+
+// Pergunta 91
+strcpy(frase[posicao], "Dom Pedro I proclamou a independência do Brasil no Rio de Janeiro.");
+resposta[posicao] = 0; // Falso (A independência foi proclamada em São Paulo)
+categoria[posicao] = 3; // Categoria 3: História
+posicao++;
+
+// Pergunta 92
+strcpy(frase[posicao], "Cleópatra foi a última rainha do Egito Ptolemaico.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 3; // Categoria 3: História
+posicao++;
+
+// Pergunta 93
+strcpy(frase[posicao], "A invenção da imprensa é atribuída a Johann Gutenberg.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 3; // Categoria 3: História
+posicao++;
+
+// Pergunta 94
+strcpy(frase[posicao], "A Revolução Industrial teve início na França.");
+resposta[posicao] = 0; // Falso (Teve início na Inglaterra)
+categoria[posicao] = 3; // Categoria 3: História
+posicao++;
+
+// Pergunta 95
+strcpy(frase[posicao], "A civilização maia floresceu na região que hoje é o México e América Central.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 3; // Categoria 3: História
+posicao++;
+
+// Pergunta 96
+strcpy(frase[posicao], "O Império Mongol foi fundado por Alexandre, o Grande.");
+resposta[posicao] = 0; // Falso (Foi fundado por Genghis Khan)
+categoria[posicao] = 3; // Categoria 3: História
+posicao++;
+
+// Pergunta 97
+strcpy(frase[posicao], "A construção da Muralha da China começou durante a dinastia Qin.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 3; // Categoria 3: História
+posicao++;
+
+// Pergunta 98
+strcpy(frase[posicao], "O Tratado de Versalhes foi assinado após a Primeira Guerra Mundial.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 3; // Categoria 3: História
+posicao++;
+
+// Pergunta 99
+strcpy(frase[posicao], "A primeira viagem ao redor do mundo foi realizada por Fernão de Magalhães.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 3; // Categoria 3: História
+posicao++;
+
+// Pergunta 100
+strcpy(frase[posicao], "O descobrimento do Brasil foi em 1500 por Pedro Álvares Cabral.");
+resposta[posicao] = 1; // Verdadeiro
+categoria[posicao] = 3; // Categoria 3: História
+posicao++;
 }
