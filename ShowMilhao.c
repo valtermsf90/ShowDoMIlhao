@@ -5,6 +5,7 @@
 #include "include/buzzers.c"
 #include "include/KeyPad.c"
 #include "C/perguntas.c"
+#include "C/frases.c"
 
 #define LED_R 13
 #define LED_B 12
@@ -28,6 +29,8 @@ int main()
     posicao = 0;
     int numQuestao = 0;
     cadastroFrase();
+    frasePositiva();
+    fraseNegativa();
     stdio_init_all();
     iniciarPinos(); // Inicializa os pinos
     srand(time(NULL));
@@ -36,16 +39,25 @@ int main()
     printf("Escola a resposta correta para as perguntas\n\n");
     while(true){
     numQuestao++;
+   
+    //randomiza a posição da pergunta
     posicao = rand() % 100;
     while (posicao >= 100)
     {
       posicao = rand() % 100;
     }
-    
+    posFrase = rand() % 12;
+    while (posFrase >= 12)
+    {
+      posFrase = rand() % 12;
+    }
+        
     printf("PLACAR: %d acertos e %d erros\n\n", acertos, erros);
     printf("%d\tQUESTAO %d\n", posicao, numQuestao);
     printf("%s\n", frase[posicao]);
     printf("[A]Verdadeiro\t[B]Falso\n");
+
+
     while (escolha)
     {
         int tecla = 0;
@@ -65,7 +77,7 @@ int main()
             if (tecla == resposta[posicao])
             {
                 buzzer_A(100);
-                printf("Muito bem!!! você acertou :D\n\n");
+                printf("%s,\n\n", mensagemPos[posFrase]);
                 for (int i = 0; i < 6; i++)
                 {
                     verde(100);
@@ -79,7 +91,7 @@ int main()
             else
             {
                 buzzer_B(100);
-                printf("Que pena, resposta errada. :(\n\n");
+                printf("%s\n\n", mensagemNeg[posFrase]);
                 for (int i = 0; i < 3; i++)
                 {
                     vermelho(100);
