@@ -21,6 +21,7 @@ int acertos = 0;
 int erros = 0;
 void cadastroFrase();
 bool escolha = true;
+bool repetido = true;
 int main()
 {
     posicao = 0;
@@ -31,74 +32,66 @@ int main()
     srand(time(NULL));
     sleep_ms(5000);
     printf("Bem vindo ao Show do Milhão\n");
-    while (true)
+    printf("Escola a resposta correta para as perguntas\n\n");
+    while(true){
+    numQuestao++;
+    posicao = rand() % 100;
+    while (posicao >= 100)
     {
-        sleep_ms(1000);
-        int posicao = rand() % 5 + 1;
-        for( int i = 0; i < 100; i++){
-         if(lista[i] == posicao){
-             posicao = rand() % 100 + 1;
-             i = 0;
-         } else {
-             lista[i] = posicao;
-         }                 
-        }
-
-
-
-
-
-        numQuestao++;
-        printf("PLACAR: %d acertos e %d erros\n\n", acertos, erros);
-        printf("%d\tQUESTAO %d\n", posicao, numQuestao);
-        printf("%s\n", frase[posicao]);
-        printf("[A]Verdadeiro\t[B]Falso\n");
-        while (escolha)
-        {
-            int tecla = 0;
-            if (gpio_get(BUTTON_A) == 0)
-            {
-                tecla = 1;
-            }
-            else if (gpio_get(BUTTON_B) == 0)
-            {
-                tecla = 2;
-            }
-            if (tecla != 0)
-            {
-                if (tecla == resposta[posicao])
-                {
-                    buzzer_A(100);
-                    printf("Resposta correta\n\n");
-                    for (int i = 0; i < 6; i++)
-                    {
-                        verde(100);
-                        apagado(50);
-                    }
-                    buzzer_A_OFF();
-                    escolha = false;
-                    acertos++;
-                    sleep_ms(1000);
-                }
-                else
-                {
-                    buzzer_B(100);
-                    printf("Resposta incorreta\n\n");
-                    for (int i = 0; i < 3; i++)
-                    {
-                        vermelho(100);
-                        apagado(50);
-                    }
-                    buzzer_B_OFF();
-                    erros++;
-                    escolha = false;
-                    sleep_ms(1000);
-                }
-            }
-        }
-        posicao++;
-        escolha = true;
+      posicao = rand() % 100;
     }
-
-    return 0;
+    
+    printf("PLACAR: %d acertos e %d erros\n\n", acertos, erros);
+    printf("%d\tQUESTAO %d\n", posicao, numQuestao);
+    printf("%s\n", frase[posicao]);
+    printf("[A]Verdadeiro\t[B]Falso\n");
+    while (escolha)
+    {
+        int tecla = 0;
+        if (gpio_get(BUTTON_A) == 0)
+        {
+            tecla = 1;
+        }
+        else if (gpio_get(BUTTON_B) == 0)
+        {
+            tecla = 2;
+        }
+        if (tecla != 0)
+        {
+            if (tecla == resposta[posicao])
+            {
+                buzzer_A(100);
+                printf("Resposta correta\n\n");
+                for (int i = 0; i < 6; i++)
+                {
+                    verde(100);
+                    apagado(50);
+                }
+                buzzer_A_OFF();
+                escolha = false;
+                acertos++;
+                sleep_ms(1000);
+            }
+            else
+            {
+                buzzer_B(100);
+                printf("Resposta incorreta\n\n");
+                for (int i = 0; i < 3; i++)
+                {
+                    vermelho(100);
+                    apagado(50);
+                }
+                buzzer_B_OFF();
+                erros++;
+                escolha = false;
+                sleep_ms(1000);
+            }
+        }
+    }
+    posicao++;
+    escolha = true;
 }
+return 0;
+}
+
+
