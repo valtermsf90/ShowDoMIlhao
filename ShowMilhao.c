@@ -38,10 +38,8 @@ bool submenu = true;
 bool submenu2 = true;
 
 // Função principal
-int main()
-{
+int main(){
     // declaração de variáveis
-
     int numQuestao = 0;
 
     // chamanado as funções
@@ -62,8 +60,7 @@ int main()
     printf("[B]Ciência\tEntreterimento\n");
     printf("[J]Historia\tAleatória\n");
     printf("\n");
-    while (menu)
-    {
+    while (menu) {
         tecla = 0;
         if (gpio_get(BUTTON_A) == 0)
         {
@@ -90,8 +87,7 @@ int main()
         }
     }
     menu = true;
-    while (submenu)
-    {
+    while (submenu){
         if (tecla == 1)
         {
             printf("[A]Geografia\t[B]Matemática\n");
@@ -197,30 +193,35 @@ int main()
 
     {
         numQuestao++;
-
         if (tema == 6)
         {
             posicaoi = rand() % posicao;
             while (usado[posicaoi] == 1)
             {
                 posicaoi = rand() % posicao;
+                tentativa++;
             }
             usado[posicaoi] = 1;
+            if(numQuestao == posicao){
+            printf("Não há mais posições disponíveis para este tema.\n");
+            }
         }
         else
         {
             // randomiza a posição da pergunta
             posicaoi = rand() % posicao;
+
             while (usado[posicaoi] == 1 || categoria[posicaoi] != tema)
             {
                 posicaoi = rand() % posicao;
                 tentativa++;
             }
             usado[posicaoi] = 1;
-            /*  if(tentativa == posicao){
-              printf("Não há mais posições disponíveis para este tema.\n");
-              }*/
+            if(numQuestao == 20){
+            printf("Não há mais posições disponíveis para este tema.\n");
+            }
         }
+        
 
         // randomiza a posição da frase positiva
         posFrase = rand() % 12;
@@ -246,7 +247,6 @@ int main()
             }
             else if (gpio_get(BUTTON_B) == 0) // verifica se o botão B foi pressionado
             {
-
                 tecla = 2;
                 opcao = 'B';
             }
