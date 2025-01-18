@@ -16,24 +16,38 @@
 #define BUTTON_J 22
 #define TIME 300
 
+int lista[100];
 int acertos = 0;
 int erros = 0;
 void cadastroFrase();
 bool escolha = true;
 int main()
 {
+    posicao = 0;
+    int numQuestao = 0;
     cadastroFrase();
     stdio_init_all();
     iniciarPinos(); // Inicializa os pinos
-    posicao = 0;
-    int numQuestao = 0;
     srand(time(NULL));
-    sleep_ms(2000);
+    sleep_ms(5000);
     printf("Bem vindo ao Show do Milhão\n");
     while (true)
     {
-        
-        int posicao = rand() % 101;
+        sleep_ms(1000);
+        int posicao = rand() % 5 + 1;
+        for( int i = 0; i < 100; i++){
+         if(lista[i] == posicao){
+             posicao = rand() % 100 + 1;
+             i = 0;
+         } else {
+             lista[i] = posicao;
+         }                 
+        }
+
+
+
+
+
         numQuestao++;
         printf("PLACAR: %d acertos e %d erros\n\n", acertos, erros);
         printf("%d\tQUESTAO %d\n", posicao, numQuestao);
