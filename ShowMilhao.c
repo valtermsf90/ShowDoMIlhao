@@ -141,7 +141,7 @@ int main(){
                 {
                     azul(300);
                     apagado(0);
-                    tema = tecla + 3;
+                    tema = tecla;
                     submenu2 = false;
                 }
                 else if (gpio_get(BUTTON_B) == 0)
